@@ -8,7 +8,16 @@ import pandas as pd
 from models import build_model, count_parameters
 
 
-MODEL_NAMES = ["plain_cnn", "resnet18_optb", "resnet18_opta", "preact_resnet18", "wide_resnet14"]
+MODEL_NAMES = [
+    "plain_cnn",
+    "resnet10_optb",
+    "resnet18_optb",
+    "resnet18_opta",
+    "preact_resnet18",
+    "wide_resnet14",
+    "resnet34_optb",
+    "resnet50_bottleneck",
+]
 
 
 def build_model_definition_matrix(output_dir: Path) -> pd.DataFrame:

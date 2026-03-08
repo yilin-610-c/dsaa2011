@@ -102,6 +102,7 @@ def train_one_run(args: argparse.Namespace) -> Dict[str, object]:
         val_ratio=args.val_ratio,
         seed=args.seed,
         use_augmentation=args.use_augmentation,
+        cache_path=args.cache_path,
     )
 
     model, spec = build_model(args.model_name, num_classes=10)
@@ -237,6 +238,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--val-ratio", type=float, default=0.1)
     parser.add_argument("--num-workers", type=int, default=0)
     parser.add_argument("--parquet-path", type=str, default="data.parquet")
+    parser.add_argument("--cache-path", type=str, default="results/cache/fashion_tensor_cache.pt")
     parser.add_argument("--output-dir", type=str, default="results/runs")
     parser.add_argument("--use-augmentation", action="store_true")
     parser.add_argument("--show-epoch-progress", action="store_true")

@@ -1,0 +1,20 @@
+{
+  "run_id": "R002",
+  "model_name": "resnet50_bottleneck",
+  "model_id": "M7",
+  "family": "ResNet-50-Bottleneck",
+  "seed": 42,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.8902581182348043,
+  "test_acc": 0.8909,
+  "train_time_min": 185.74983486334483,
+  "params": 23519690,
+  "history_csv": "results/runs/resnet50_bottleneck_seed42_history.csv",
+  "checkpoint": "results/runs/resnet50_bottleneck_seed42.pt"
+}

@@ -1,6 +1,9 @@
 ModelID,Family,Residual,ShortcutType,BlockType,Depth,WidthMultiplier,Stem,DownsampleStrategy,Params(M),model_name
 M1,Plain-CNN,No,N/A,PlainConvBlock,-,1.0,3x3 conv,stride,0.391,plain_cnn
+M8,ResNet-10-OptB,Yes,OptionB(1x1 proj),BasicBlock,10,1.0,3x3 conv,stage stride=2,4.902,resnet10_optb
 M2,ResNet-18-OptB,Yes,OptionB(1x1 proj),BasicBlock,18,1.0,3x3 conv,stage stride=2,11.173,resnet18_optb
 M3,ResNet-18-OptA,Yes,OptionA(zero-pad),BasicBlock,18,1.0,3x3 conv,stage stride=2,10.999,resnet18_opta
 M4,PreAct-ResNet-18,Yes,OptionB(1x1 proj),PreActBasicBlock,18,1.0,3x3 conv,stage stride=2,11.17,preact_resnet18
 M5,Wide-ResNet-14,Yes,OptionB(1x1 proj),BasicBlock,14,2.0,3x3 conv,stage stride=2,25.487,wide_resnet14
+M6,ResNet-34-OptB,Yes,OptionB(1x1 proj),BasicBlock,34,1.0,3x3 conv,stage stride=2,21.281,resnet34_optb
+M7,ResNet-50-Bottleneck,Yes,OptionB(1x1 proj),Bottleneck,50,1.0,3x3 conv,stage stride=2,23.52,resnet50_bottleneck

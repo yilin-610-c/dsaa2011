@@ -1,0 +1,20 @@
+{
+  "run_id": "R016",
+  "model_name": "resnet10_optb",
+  "model_id": "M8",
+  "family": "ResNet-10-OptB",
+  "seed": 42,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.9378850957535387,
+  "test_acc": 0.9395,
+  "train_time_min": 13.452776420116425,
+  "params": 4902090,
+  "history_csv": "results/runs/resnet10_optb_seed42_history.csv",
+  "checkpoint": "results/runs/resnet10_optb_seed42.pt"
+}

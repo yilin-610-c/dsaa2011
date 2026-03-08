@@ -1,4 +1,3 @@
-import math
 from dataclasses import dataclass
 from typing import Callable, List, Tuple
 
@@ -130,6 +129,50 @@ class PreActBlock(nn.Module):
         return out
 
 
+class Bottleneck(nn.Module):
+    expansion = 4
+
+    def __init__(
+        self,
+        in_channels: int,
+        out_channels: int,
+        stride: int = 1,
+        shortcut_type: str = "B",
+    ) -> None:
+        super().__init__()
+        expanded_channels = out_channels * self.expansion
+        self.conv1 = conv1x1(in_channels, out_channels)
+        self.bn1 = nn.BatchNorm2d(out_channels)
+        self.conv2 = conv3x3(out_channels, out_channels, stride)
+        self.bn2 = nn.BatchNorm2d(out_channels)
+        self.conv3 = conv1x1(out_channels, expanded_channels)
+        self.bn3 = nn.BatchNorm2d(expanded_channels)
+        self.relu = nn.ReLU(inplace=True)
+        self.shortcut = nn.Identity()
+        if stride != 1 or in_channels != expanded_channels:
+            if shortcut_type == "A":
+                self.shortcut = ShortcutA(in_channels, expanded_channels, stride)
+            else:
+                self.shortcut = nn.Sequential(
+                    conv1x1(in_channels, expanded_channels, stride),
+                    nn.BatchNorm2d(expanded_channels),
+                )
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        identity = self.shortcut(x)
+        out = self.conv1(x)
+        out = self.bn1(out)
+        out = self.relu(out)
+        out = self.conv2(out)
+        out = self.bn2(out)
+        out = self.relu(out)
+        out = self.conv3(out)
+        out = self.bn3(out)
+        out = out + identity
+        out = self.relu(out)
+        return out
+
+
 class ResNet(nn.Module):
     def __init__(
         self,
@@ -242,6 +285,21 @@ def build_model(model_name: str, num_classes: int = 10) -> Tuple[nn.Module, Mode
         )
         return model, spec
 
+    if model_name == "resnet10_optb":
+        model = ResNet(BasicBlock, [1, 1, 1, 1], num_classes=num_classes, width_multiplier=1.0, shortcut_type="B")
+        spec = ModelSpec(
+            model_id="M8",
+            family="ResNet-10-OptB",
+            residual=True,
+            shortcut_type="OptionB(1x1 proj)",
+            block_type="BasicBlock",
+            depth=10,
+            width_multiplier=1.0,
+            stem="3x3 conv",
+            downsample_strategy="stage stride=2",
+        )
+        return model, spec
+
     if model_name == "resnet18_opta":
         model = ResNet(BasicBlock, [2, 2, 2, 2], num_classes=num_classes, width_multiplier=1.0, shortcut_type="A")
         spec = ModelSpec(
@@ -282,6 +340,36 @@ def build_model(model_name: str, num_classes: int = 10) -> Tuple[nn.Module, Mode
             block_type="BasicBlock",
             depth=14,
             width_multiplier=2.0,
+            stem="3x3 conv",
+            downsample_strategy="stage stride=2",
+        )
+        return model, spec
+
+    if model_name == "resnet34_optb":
+        model = ResNet(BasicBlock, [3, 4, 6, 3], num_classes=num_classes, width_multiplier=1.0, shortcut_type="B")
+        spec = ModelSpec(
+            model_id="M6",
+            family="ResNet-34-OptB",
+            residual=True,
+            shortcut_type="OptionB(1x1 proj)",
+            block_type="BasicBlock",
+            depth=34,
+            width_multiplier=1.0,
+            stem="3x3 conv",
+            downsample_strategy="stage stride=2",
+        )
+        return model, spec
+
+    if model_name == "resnet50_bottleneck":
+        model = ResNet(Bottleneck, [3, 4, 6, 3], num_classes=num_classes, width_multiplier=1.0, shortcut_type="B")
+        spec = ModelSpec(
+            model_id="M7",
+            family="ResNet-50-Bottleneck",
+            residual=True,
+            shortcut_type="OptionB(1x1 proj)",
+            block_type="Bottleneck",
+            depth=50,
+            width_multiplier=1.0,
             stem="3x3 conv",
             downsample_strategy="stage stride=2",
         )
