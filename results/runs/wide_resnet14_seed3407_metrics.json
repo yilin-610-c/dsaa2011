@@ -1,0 +1,20 @@
+{
+  "run_id": "R010",
+  "model_name": "wide_resnet14",
+  "model_id": "M5",
+  "family": "Wide-ResNet-14",
+  "seed": 3407,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.9420482930890924,
+  "test_acc": 0.9421,
+  "train_time_min": 20.35564738114675,
+  "params": 25486730,
+  "history_csv": "results/runs/wide_resnet14_seed3407_history.csv",
+  "checkpoint": "results/runs/wide_resnet14_seed3407.pt"
+}

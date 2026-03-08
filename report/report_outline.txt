@@ -1,0 +1,19 @@
+FashionMNIST-Resplit Technical Report Draft
+
+(a) Implementation
+Implemented Plain-CNN baseline and ResNet variants with controlled protocol.
+Core modules include convolution stem, residual blocks, skip connections, and BatchNorm.
+
+(b) Experimental results
+Please cite results/summary_matrix.csv and result figures in results/*.png.
+
+(c) Discussion and conclusions
+Q1 M2 vs M1: residual gain = 1.587 percentage points.
+Q2 M2 vs M3: OptionB - OptionA = 1.360 percentage points.
+Q3 M4 vs M2: PreAct - ResNet18 = 0.067 percentage points.
+Q4 M5 vs M2: Wide14 - ResNet18 = 0.010 percentage points.
+Include analysis of parameter efficiency using AccuracyPerMParam.
+
+(d) Additional notes
+Add training stability remarks from curve_train_val.png.
+Document external references if any non-standard code is used.

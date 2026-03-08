@@ -1,0 +1,20 @@
+{
+  "run_id": "R001",
+  "model_name": "plain_cnn",
+  "model_id": "M1",
+  "family": "Plain-CNN",
+  "seed": 42,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.9248959200666111,
+  "test_acc": 0.9275,
+  "train_time_min": 4.592049157619476,
+  "params": 390890,
+  "history_csv": "results/runs/plain_cnn_seed42_history.csv",
+  "checkpoint": "results/runs/plain_cnn_seed42.pt"
+}

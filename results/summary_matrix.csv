@@ -1,0 +1,6 @@
+ModelID,Family,Params(M),TestAcc Mean(%),TestAcc Std,BestValAcc Mean(%),RelativeGain vs M1,AccuracyPerMParam
+M1,Plain-CNN,0.391,92.583,0.255,92.301,0.0,2.3679
+M2,ResNet-18-OptB,11.173,94.17,0.185,94.066,1.587,0.0843
+M3,ResNet-18-OptA,10.999,92.81,0.875,92.734,0.227,0.0844
+M4,PreAct-ResNet-18,11.17,94.237,0.304,93.883,1.653,0.0844
+M5,Wide-ResNet-14,25.487,94.18,0.089,94.044,1.597,0.037

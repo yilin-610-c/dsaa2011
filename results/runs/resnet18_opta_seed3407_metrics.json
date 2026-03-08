@@ -1,0 +1,20 @@
+{
+  "run_id": "R008",
+  "model_name": "resnet18_opta",
+  "model_id": "M3",
+  "family": "ResNet-18-OptA",
+  "seed": 3407,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.929225645295587,
+  "test_acc": 0.928,
+  "train_time_min": 11.168556209405264,
+  "params": 10998986,
+  "history_csv": "results/runs/resnet18_opta_seed3407_history.csv",
+  "checkpoint": "results/runs/resnet18_opta_seed3407.pt"
+}

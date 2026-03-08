@@ -1,0 +1,20 @@
+{
+  "run_id": "R007",
+  "model_name": "resnet18_optb",
+  "model_id": "M2",
+  "family": "ResNet-18-OptB",
+  "seed": 3407,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.9405495420482931,
+  "test_acc": 0.9418,
+  "train_time_min": 10.810528194904327,
+  "params": 11172810,
+  "history_csv": "results/runs/resnet18_optb_seed3407_history.csv",
+  "checkpoint": "results/runs/resnet18_optb_seed3407.pt"
+}

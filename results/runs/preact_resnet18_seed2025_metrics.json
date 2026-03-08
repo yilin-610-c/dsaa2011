@@ -1,0 +1,20 @@
+{
+  "run_id": "R014",
+  "model_name": "preact_resnet18",
+  "model_id": "M4",
+  "family": "PreAct-ResNet-18",
+  "seed": 2025,
+  "epochs": 8,
+  "batch_size": 256,
+  "optimizer": "SGD",
+  "lr": 0.05,
+  "scheduler": "CosineAnnealingLR",
+  "weight_decay": 0.0005,
+  "augmentation": true,
+  "best_val_acc": 0.9385512073272273,
+  "test_acc": 0.9449,
+  "train_time_min": 10.066135700543722,
+  "params": 11170122,
+  "history_csv": "results/runs/preact_resnet18_seed2025_history.csv",
+  "checkpoint": "results/runs/preact_resnet18_seed2025.pt"
+}
