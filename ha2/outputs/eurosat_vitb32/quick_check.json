@@ -1,0 +1,15 @@
+{
+  "dataset_size": 27000,
+  "test_size": 5400,
+  "num_classes": 10,
+  "backend": "clip",
+  "classifier_embedding_mean_abs_delta": 0.015380859375,
+  "simple_classifier_shape": [
+    10,
+    512
+  ],
+  "ensemble_classifier_shape": [
+    10,
+    512
+  ]
+}

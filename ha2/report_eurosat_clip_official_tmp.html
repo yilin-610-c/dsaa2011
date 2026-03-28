@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report_eurosat_clip_official.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="eurosat-zero-shot-classification-with-clip">EuroSAT Zero-Shot Classification with CLIP</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This report studies zero-shot image classification on the EuroSAT dataset using the OpenAI CLIP model <code>ViT-B/32</code>. The goal is to evaluate whether prompt ensembling improves zero-shot transfer on remote-sensing imagery relative to a simple generic prompt.</p>
+<p>Two prompt settings are compared. The baseline uses the assignment-specified template <code>a photo of a {CLASS}.</code> The second setting uses the documentation-provided EuroSAT prompt ensemble:</p>
+<ul>
+<li><code>a centered satellite photo of {}.</code></li>
+<li><code>a centered satellite photo of a {}.</code></li>
+<li><code>a centered satellite photo of the {}.</code></li>
+</ul>
+<p>The central question is whether this documentation-provided ensemble improves overall accuracy, how stable the gain is, and which classes benefit or suffer most from the change in prompt design.</p>
+<h2 id="2-experimental-setup">2. Experimental Setup</h2>
+<p>The experiment uses the EuroSAT dataset, which contains 27,000 Sentinel-2 image patches from 10 land-use and land-cover categories. In this implementation, evaluation is performed on a deterministic stratified 20% test split with random seed <code>2026</code>, producing <code>5400</code> test images.</p>
+<p>The model is OpenAI CLIP <code>ViT-B/32</code>, executed through the <code>clip</code> package with OpenAI pretrained weights. No fine-tuning, prompt learning, or calibration is applied. The task is strictly zero-shot classification.</p>
+<p>This setup is important because EuroSAT is composed of satellite patches rather than ordinary natural photographs. As a result, prompt wording may either align well with the image domain or introduce a mismatch between text and image representations.</p>
+<h2 id="3-prompt-design-and-evaluation-method">3. Prompt Design and Evaluation Method</h2>
+<p>The simple baseline uses one prompt per class:</p>
+<p><code>a photo of a {CLASS}.</code></p>
+<p>The documentation-provided ensemble uses three prompts per class:</p>
+<ul>
+<li><code>a centered satellite photo of {}.</code></li>
+<li><code>a centered satellite photo of a {}.</code></li>
+<li><code>a centered satellite photo of the {}.</code></li>
+</ul>
+<p>For the ensemble setting, each prompt is encoded independently by CLIP. The resulting text embeddings are normalized, averaged within each class, and normalized again before image-text similarity scoring. This produces one class prototype per category for the ensemble setting.</p>
+<p>The overall comparison is straightforward, but its interpretation requires care. Relative to the baseline, the ensemble changes two things at once: the wording changes from <code>photo</code> to <code>centered satellite photo</code>, and the number of templates increases from one to three. Therefore, the experiment does not completely isolate the source of the gain. However, because the three documentation-provided templates are highly similar, the results are more consistent with the hypothesis that domain alignment plays the dominant role.</p>
+<h2 id="4-overall-results">4. Overall Results</h2>
+<table>
+<thead>
+<tr>
+<th>Prompt setting</th>
+<th style="text-align:right">Accuracy</th>
+<th>95% bootstrap CI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple</td>
+<td style="text-align:right">39.46%</td>
+<td>[38.11%, 40.70%]</td>
+</tr>
+<tr>
+<td>Documentation-provided ensemble</td>
+<td style="text-align:right">49.06%</td>
+<td>[47.76%, 50.50%]</td>
+</tr>
+</tbody>
+</table>
+<p>The documentation-provided ensemble improves accuracy from <code>39.46%</code> to <code>49.06%</code>, an absolute gain of <code>9.59</code> percentage points. This is a substantial improvement rather than a marginal fluctuation. The bootstrap confidence intervals are well separated, which indicates that the gain is robust and unlikely to be explained by random variation in the test split.</p>
+<p>The result is notable because the ensemble is very small and the three templates differ only slightly. This means the improvement is unlikely to come purely from having multiple diverse prompts. A more plausible explanation is that the documentation-provided ensemble describes the input as a satellite image, which better matches the EuroSAT domain than the generic word <code>photo</code>.</p>
+<h2 id="5-prediction-transition-analysis">5. Prediction Transition Analysis</h2>
+<p>The per-sample transition statistics are:</p>
+<ul>
+<li>Improved: <code>1079</code></li>
+<li>Regressed: <code>561</code></li>
+<li>Unchanged and correct: <code>1570</code></li>
+<li>Unchanged and wrong: <code>2190</code></li>
+</ul>
+<p>Most predictions remain unchanged (<code>3760 / 5400</code>), so the ensemble does not modify the classifier indiscriminately. Among the <code>1640</code> changed predictions, <code>1079</code> move in the correct direction and <code>561</code> become newly incorrect. In other words, approximately <code>65.8%</code> of changed predictions are beneficial. This pattern supports the interpretation that prompt ensembling primarily helps on ambiguous cases, even though it also introduces some new errors.</p>
+<h2 id="6-class-wise-results">6. Class-Wise Results</h2>
+<h3 id="61-most-improved-classes">6.1 Most improved classes</h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align:right">Simple</th>
+<th style="text-align:right">Ensemble</th>
+<th style="text-align:right">Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Annual crop land</td>
+<td style="text-align:right">1.83%</td>
+<td style="text-align:right">73.50%</td>
+<td style="text-align:right">+71.67</td>
+</tr>
+<tr>
+<td>Forest</td>
+<td style="text-align:right">11.83%</td>
+<td style="text-align:right">54.33%</td>
+<td style="text-align:right">+42.50</td>
+</tr>
+<tr>
+<td>Industrial area</td>
+<td style="text-align:right">47.40%</td>
+<td style="text-align:right">73.60%</td>
+<td style="text-align:right">+26.20</td>
+</tr>
+<tr>
+<td>Pasture land</td>
+<td style="text-align:right">0.00%</td>
+<td style="text-align:right">17.50%</td>
+<td style="text-align:right">+17.50</td>
+</tr>
+<tr>
+<td>Highway or road</td>
+<td style="text-align:right">61.00%</td>
+<td style="text-align:right">71.20%</td>
+<td style="text-align:right">+10.20</td>
+</tr>
+</tbody>
+</table>
+<p>The largest gain appears in <code>annual crop land</code>, which changes from almost always wrong to mostly correct. <code>forest</code> and <code>industrial area</code> also improve substantially. These are not small class-level fluctuations; they indicate that prompt wording can strongly reshape CLIP's zero-shot decision boundaries on EuroSAT.</p>
+<h3 id="62-most-degraded-classes">6.2 Most degraded classes</h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align:right">Simple</th>
+<th style="text-align:right">Ensemble</th>
+<th style="text-align:right">Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permanent crop land</td>
+<td style="text-align:right">86.20%</td>
+<td style="text-align:right">1.60%</td>
+<td style="text-align:right">-84.60</td>
+</tr>
+<tr>
+<td>Sea or lake</td>
+<td style="text-align:right">81.50%</td>
+<td style="text-align:right">70.33%</td>
+<td style="text-align:right">-11.17</td>
+</tr>
+<tr>
+<td>Herbaceous vegetation</td>
+<td style="text-align:right">0.33%</td>
+<td style="text-align:right">0.00%</td>
+<td style="text-align:right">-0.33</td>
+</tr>
+</tbody>
+</table>
+<p>The most important negative result is <code>permanent crop land</code>, whose accuracy collapses from <code>86.20%</code> to <code>1.60%</code>. This is the clearest counterexample to any claim that prompt ensembling helps every class. A smaller but still meaningful degradation is also observed for <code>sea or lake</code>.</p>
+<p>The correct conclusion is therefore not that the ensemble is uniformly better. Rather, the documentation-provided ensemble improves performance overall while producing highly uneven class-wise effects.</p>
+<h2 id="7-confusion-patterns">7. Confusion Patterns</h2>
+<h3 id="71-bias-in-the-simple-prompt">7.1 Bias in the simple prompt</h3>
+<p>The simple prompt exhibits a strong bias toward predicting <code>permanent crop land</code> for many ambiguous samples. The largest simple-prompt confusion pairs are:</p>
+<ul>
+<li><code>annual crop land -&gt; permanent crop land</code>: <code>446</code></li>
+<li><code>pasture land -&gt; permanent crop land</code>: <code>378</code></li>
+<li><code>herbaceous vegetation -&gt; permanent crop land</code>: <code>350</code></li>
+<li><code>river -&gt; permanent crop land</code>: <code>208</code></li>
+<li><code>highway or road -&gt; permanent crop land</code>: <code>158</code></li>
+</ul>
+<p>This is one of the clearest patterns in the experiment. Under the generic prompt, many borderline rural patches collapse into one agricultural class.</p>
+<h3 id="72-what-the-ensemble-changes">7.2 What the ensemble changes</h3>
+<p>The documentation-provided ensemble reduces that earlier collapse into <code>permanent crop land</code>, which explains much of the gain for <code>annual crop land</code>, <code>forest</code>, <code>industrial area</code>, and <code>pasture land</code>. At the same time, it introduces a different confusion pattern:</p>
+<ul>
+<li><code>permanent crop land -&gt; annual crop land</code>: <code>312</code></li>
+<li><code>permanent crop land -&gt; industrial area</code>: <code>62</code></li>
+<li><code>permanent crop land -&gt; highway or road</code>: <code>56</code></li>
+</ul>
+<p>This shows that the ensemble does not simply fix the classifier. It redistributes errors. One bias becomes weaker, but another emerges, especially among closely related land-cover classes.</p>
+<h3 id="73-residual-difficulty-in-fine-grained-land-cover">7.3 Residual difficulty in fine-grained land cover</h3>
+<p>Even after prompt ensembling, the most persistent errors remain concentrated in visually similar vegetation and agricultural categories:</p>
+<ul>
+<li><code>herbaceous vegetation -&gt; forest</code>: <code>405</code></li>
+<li><code>permanent crop land -&gt; annual crop land</code>: <code>312</code></li>
+<li><code>pasture land -&gt; annual crop land</code>: <code>252</code></li>
+</ul>
+<p>This suggests that prompt engineering improves zero-shot transfer, but does not remove the intrinsic difficulty of fine-grained land-cover discrimination in satellite imagery.</p>
+<h3 id="74-relative-strength-of-structured-man-made-classes">7.4 Relative strength of structured man-made classes</h3>
+<p>Classes with stronger geometric structure tend to behave more consistently:</p>
+<ul>
+<li><code>industrial area</code>: <code>47.40% -&gt; 73.60%</code></li>
+<li><code>highway or road</code>: <code>61.00% -&gt; 71.20%</code></li>
+<li><code>residential area</code>: <code>81.00% -&gt; 89.17%</code></li>
+</ul>
+<p>These categories likely benefit from clearer spatial organization than vegetation-heavy categories, making them easier for a general-purpose vision-language model to recognize in a zero-shot setting.</p>
+<h2 id="8-interpretation">8. Interpretation</h2>
+<p>The main finding of this experiment is that prompt engineering is effective on EuroSAT. The documentation-provided ensemble yields a large and statistically robust improvement over the simple baseline. A plausible explanation is better domain alignment: <code>centered satellite photo</code> is a much better description of EuroSAT imagery than the generic word <code>photo</code>.</p>
+<p>At the same time, the experiment does not fully isolate the source of the improvement, because it changes both wording and template count. The current results therefore support, but do not prove, the interpretation that domain wording is the dominant factor.</p>
+<p>The class-wise behavior also shows that prompt improvements are not uniform. Some classes benefit dramatically, while others suffer severe regressions. This means prompt engineering in zero-shot CLIP should be understood as a change in class bias and confusion structure, not simply as a global accuracy boost.</p>
+<h2 id="9-results-visualization-and-error-analysis">9. Results Visualization and Error Analysis</h2>
+<p>This section combines the main visual evidence with representative case analysis. Unless otherwise noted, all class confidences reported below are softmax probabilities obtained by applying softmax to the CLIP similarity logits over the 10 EuroSAT classes. The confusion matrices in this section are row-normalized by true class, so each row sums to 1 and can be interpreted as a class-conditional error distribution.</p>
+<h3 id="91-representative-cases">9.1 Representative cases</h3>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/data/eurosat/2750/AnnualCrop/AnnualCrop_480.jpg" alt="Example A"></p>
+<p>Example A is a representative correction case. Under the simple prompt, the image is predicted as <code>permanent crop land</code> with softmax probability <code>0.579</code>. Under the documentation-provided ensemble, it is correctly classified as <code>annual crop land</code> with softmax probability <code>0.744</code>. This case directly reflects the broader pattern in which the simple prompt over-predicts <code>permanent crop land</code> and the ensemble recovers the correct agricultural label.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/data/eurosat/2750/Forest/Forest_796.jpg" alt="Example B"></p>
+<p>Example B provides a second strong correction example. The simple prompt predicts <code>permanent crop land</code> with softmax probability <code>0.297</code>, whereas the ensemble predicts <code>forest</code> with softmax probability <code>0.807</code>. The large confidence increase suggests that the documentation-provided prompts align the model more effectively with remote-sensing semantics for this type of scene.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/data/eurosat/2750/Industrial/Industrial_948.jpg" alt="Example C"></p>
+<p>Example C shows a similar effect for a man-made class. The simple prompt predicts <code>permanent crop land</code> with softmax probability <code>0.338</code>, while the ensemble correctly predicts <code>industrial area</code> with softmax probability <code>0.735</code>. This example supports the observation that structurally distinctive classes benefit strongly from the documentation-provided ensemble.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/data/eurosat/2750/PermanentCrop/PermanentCrop_1017.jpg" alt="Example D"></p>
+<p>Example D is the most important regression case in the experiment. The simple prompt correctly predicts <code>permanent crop land</code> with softmax probability <code>0.763</code>, but the documentation-provided ensemble changes the prediction to <code>annual crop land</code> with softmax probability <code>0.326</code>. This example is highly representative of the dominant failure mode of the ensemble and visually supports the large class-wise collapse observed for <code>permanent crop land</code>.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/data/eurosat/2750/SeaLake/SeaLake_1007.jpg" alt="Example E"></p>
+<p>Example E is another informative regression case. The simple prompt correctly predicts <code>sea or lake</code> with softmax probability <code>0.688</code>, but the ensemble predicts <code>forest</code> with softmax probability <code>0.382</code>. This shows that the ensemble can also hurt classes that are otherwise relatively strong, especially when dark shoreline or texture cues create ambiguity.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/data/eurosat/2750/HerbaceousVegetation/HerbaceousVegetation_2262.jpg" alt="Example F"></p>
+<p>Example F remains incorrect under both settings. The simple prompt predicts <code>forest</code> with softmax probability <code>0.688</code>, and the ensemble also predicts <code>forest</code>, now with even higher confidence (<code>0.874</code>). This example is useful because it shows that some EuroSAT classes remain intrinsically difficult for zero-shot CLIP even after prompt ensembling.</p>
+<h3 id="92-why-annual-crop-land-and-permanent-crop-land-are-easy-to-confuse">9.2 Why <code>annual crop land</code> and <code>permanent crop land</code> are easy to confuse</h3>
+<p>The confusion between <code>annual crop land</code> and <code>permanent crop land</code> is not merely a prompt artifact. It is also rooted in the way these categories are defined and in the kind of evidence available in EuroSAT.</p>
+<p>From a land-cover perspective, annual crops and permanent crops differ partly in temporal behavior. Annual crops are typically planted and harvested within a single agricultural cycle and often require replanting. Permanent crops, by contrast, occupy the land for multiple years and can be harvested repeatedly without seasonal replanting. Part of the true distinction is therefore temporal rather than purely spatial.</p>
+<p>However, EuroSAT is built from single-time Sentinel-2 image patches rather than time series. This means the model does not observe seasonal dynamics, phenology, or replanting cycles, even though these cues are important for separating annual from permanent crops in practice.</p>
+<p>Even in a single image, the two categories can look very similar. Both may show repeated field-like textures, regular parcel boundaries, large homogeneous agricultural regions, and similar vegetation or soil colors. Unless a patch contains especially distinctive orchard rows, vineyard patterns, or tree-crown structure, the visual evidence may be insufficient for reliable separation.</p>
+<p>This difficulty is amplified by the use of zero-shot CLIP. CLIP is a general-purpose vision-language model rather than a specialized remote-sensing model trained to recognize crop phenology. It can often identify that a patch is agricultural, but it is much less reliable at distinguishing between fine-grained crop categories whose definitions partly depend on multi-temporal land-use behavior.</p>
+<h3 id="93-confusion-matrices">9.3 Confusion matrices</h3>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/outputs/eurosat_vitb32_official/figures/confusion_simple.png" alt="Confusion matrix for the simple prompt"></p>
+<p><em>Figure 1. Normalized confusion matrix for the simple prompt setting.</em></p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/outputs/eurosat_vitb32_official/figures/confusion_ensemble.png" alt="Confusion matrix for the documentation-provided ensemble"></p>
+<p><em>Figure 2. Normalized confusion matrix for the documentation-provided ensemble setting.</em></p>
+<p>The confusion matrices summarize the main result of the report. The simple prompt produces a visible concentration of errors into <code>permanent crop land</code>, whereas the documentation-provided ensemble redistributes those errors and improves several categories. At the same time, the ensemble introduces a new collapse from <code>permanent crop land</code> into <code>annual crop land</code>, which is also clearly visible.</p>
+<h3 id="94-example-predictions">9.4 Example predictions</h3>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/outputs/eurosat_vitb32_official/figures/cases/simple_wrong_ensemble_right.png" alt="Examples where the documentation-provided ensemble corrects the simple prompt"></p>
+<p><em>Figure 3. Representative cases where the simple prompt is wrong but the documentation-provided ensemble is correct. These correspond to corrections such as examples A, B, and C.</em></p>
+<p>These corrected examples show that the simple prompt tends to over-predict <code>permanent crop land</code> for ambiguous rural patches. After replacing the generic prompt with the documentation-provided satellite-image ensemble, the model recovers more plausible labels such as <code>forest</code>, <code>annual crop land</code>, and <code>highway or road</code>.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/outputs/eurosat_vitb32_official/figures/cases/both_wrong.png" alt="Examples where both settings are wrong"></p>
+<p><em>Figure 4. Representative cases where both settings are wrong. These correspond to persistent failures such as example F.</em></p>
+<p>Persistent failure cases indicate that prompt engineering does not solve all ambiguities. In particular, visually similar categories can still remain confused even when the prompt set is better matched to the remote-sensing domain.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/outputs/eurosat_vitb32_official/figures/cases/both_correct_confidence_shift.png" alt="Examples where both settings are correct but confidence differs"></p>
+<p><em>Figure 5. Representative cases where both settings are correct but confidence differs substantially.</em></p>
+<p>These examples show that the ensemble can improve confidence even when the top-1 prediction is unchanged, suggesting that the documentation-provided prompts produce class prototypes that are better aligned with EuroSAT imagery.</p>
+<p><img src="file:///home/lyl610/dsaa2011/dsaa2011/ha2/outputs/eurosat_vitb32_official/figures/cases/simple_correct_ensemble_wrong.png" alt="Example where the simple prompt is correct but the documentation-provided ensemble is wrong"></p>
+<p><em>Figure 6. A representative regression case corresponding to example D, where the simple prompt correctly predicts <code>permanent crop land</code>, but the documentation-provided ensemble changes the prediction to <code>annual crop land</code>.</em></p>
+<p>This final example is important because it visualizes the main negative result of the experiment and prevents the overall improvement from being overstated.</p>
+<h2 id="10-limitations">10. Limitations</h2>
+<ul>
+<li>The evaluation uses a deterministic stratified split rather than an official benchmark split from the original EuroSAT benchmark.</li>
+<li>The experiment is zero-shot only; no fine-tuning, prompt learning, or calibration is used.</li>
+<li>Because the ensemble differs from the baseline in both wording and template count, the current experiment does not fully isolate the source of the gain.</li>
+<li>The strong failure on <code>permanent crop land</code> shows that better overall accuracy does not imply uniformly better behavior across classes.</li>
+</ul>
+<h2 id="11-conclusion">11. Conclusion</h2>
+<p>Using the documentation-provided EuroSAT prompt ensemble improves zero-shot CLIP accuracy from <code>39.46%</code> to <code>49.06%</code>, a large and robust gain over the simple baseline. The most plausible explanation is improved domain alignment: <code>centered satellite photo</code> is a more appropriate description of EuroSAT imagery than the generic word <code>photo</code>.</p>
+<p>However, the improvement is not uniform. The ensemble dramatically improves several classes, especially <code>annual crop land</code>, <code>forest</code>, and <code>industrial area</code>, while severely degrading <code>permanent crop land</code> and slightly hurting <code>sea or lake</code>. The correct conclusion is therefore not simply that prompt ensembling is better, but that documentation-provided remote-sensing prompts substantially improve zero-shot transfer overall while also reshaping class bias and confusion structure in important ways.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Radford et al., <em>Learning Transferable Visual Models From Natural Language Supervision</em>, ICML 2021.</li>
+<li>OpenAI CLIP repository: https://github.com/openai/CLIP</li>
+<li>CLIP Benchmark repository and dataset prompt templates: https://github.com/LAION-AI/CLIP_benchmark</li>
+<li>Helber et al., <em>EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification</em>, IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2019. DOI: 10.1109/JSTARS.2019.2918242</li>
+</ol>
+
+</body>
+</html>

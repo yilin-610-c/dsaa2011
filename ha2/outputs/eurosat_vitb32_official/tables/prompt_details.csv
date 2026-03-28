@@ -1,0 +1,21 @@
+prompt_setting,class_name,num_templates,templates
+simple,annual crop land,1,a photo of a annual crop land.
+simple,forest,1,a photo of a forest.
+simple,herbaceous vegetation,1,a photo of a herbaceous vegetation.
+simple,highway or road,1,a photo of a highway or road.
+simple,industrial area,1,a photo of a industrial area.
+simple,pasture land,1,a photo of a pasture land.
+simple,permanent crop land,1,a photo of a permanent crop land.
+simple,residential area,1,a photo of a residential area.
+simple,river,1,a photo of a river.
+simple,sea or lake,1,a photo of a sea or lake.
+ensemble,annual crop land,3,a centered satellite photo of annual crop land. || a centered satellite photo of a annual crop land. || a centered satellite photo of the annual crop land.
+ensemble,forest,3,a centered satellite photo of forest. || a centered satellite photo of a forest. || a centered satellite photo of the forest.
+ensemble,herbaceous vegetation,3,a centered satellite photo of herbaceous vegetation. || a centered satellite photo of a herbaceous vegetation. || a centered satellite photo of the herbaceous vegetation.
+ensemble,highway or road,3,a centered satellite photo of highway or road. || a centered satellite photo of a highway or road. || a centered satellite photo of the highway or road.
+ensemble,industrial area,3,a centered satellite photo of industrial area. || a centered satellite photo of a industrial area. || a centered satellite photo of the industrial area.
+ensemble,pasture land,3,a centered satellite photo of pasture land. || a centered satellite photo of a pasture land. || a centered satellite photo of the pasture land.
+ensemble,permanent crop land,3,a centered satellite photo of permanent crop land. || a centered satellite photo of a permanent crop land. || a centered satellite photo of the permanent crop land.
+ensemble,residential area,3,a centered satellite photo of residential area. || a centered satellite photo of a residential area. || a centered satellite photo of the residential area.
+ensemble,river,3,a centered satellite photo of river. || a centered satellite photo of a river. || a centered satellite photo of the river.
+ensemble,sea or lake,3,a centered satellite photo of sea or lake. || a centered satellite photo of a sea or lake. || a centered satellite photo of the sea or lake.

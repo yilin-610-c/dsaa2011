@@ -1,0 +1,21 @@
+prompt_setting,class_name,num_templates,templates
+simple,annual crop land,1,a photo of a annual crop land.
+simple,forest,1,a photo of a forest.
+simple,herbaceous vegetation,1,a photo of a herbaceous vegetation.
+simple,highway or road,1,a photo of a highway or road.
+simple,industrial area,1,a photo of a industrial area.
+simple,pasture land,1,a photo of a pasture land.
+simple,permanent crop land,1,a photo of a permanent crop land.
+simple,residential area,1,a photo of a residential area.
+simple,river,1,a photo of a river.
+simple,sea or lake,1,a photo of a sea or lake.
+ensemble,annual crop land,7,a satellite photo of annual crop land. || a centered satellite image of annual crop land. || an aerial image of annual crop land. || a remote sensing image of annual crop land. || an overhead view of annual crop land. || a land cover image of annual crop land. || a Sentinel-2 style patch of annual crop land.
+ensemble,forest,7,a satellite photo of forest. || a centered satellite image of forest. || an aerial image of forest. || a remote sensing image of forest. || an overhead view of forest. || a land cover image of forest. || a Sentinel-2 style patch of forest.
+ensemble,herbaceous vegetation,7,a satellite photo of herbaceous vegetation. || a centered satellite image of herbaceous vegetation. || an aerial image of herbaceous vegetation. || a remote sensing image of herbaceous vegetation. || an overhead view of herbaceous vegetation. || a land cover image of herbaceous vegetation. || a Sentinel-2 style patch of herbaceous vegetation.
+ensemble,highway or road,7,a satellite photo of highway or road. || a centered satellite image of highway or road. || an aerial image of highway or road. || a remote sensing image of highway or road. || an overhead view of highway or road. || a land cover image of highway or road. || a Sentinel-2 style patch of highway or road.
+ensemble,industrial area,7,a satellite photo of industrial area. || a centered satellite image of industrial area. || an aerial image of industrial area. || a remote sensing image of industrial area. || an overhead view of industrial area. || a land cover image of industrial area. || a Sentinel-2 style patch of industrial area.
+ensemble,pasture land,7,a satellite photo of pasture land. || a centered satellite image of pasture land. || an aerial image of pasture land. || a remote sensing image of pasture land. || an overhead view of pasture land. || a land cover image of pasture land. || a Sentinel-2 style patch of pasture land.
+ensemble,permanent crop land,7,a satellite photo of permanent crop land. || a centered satellite image of permanent crop land. || an aerial image of permanent crop land. || a remote sensing image of permanent crop land. || an overhead view of permanent crop land. || a land cover image of permanent crop land. || a Sentinel-2 style patch of permanent crop land.
+ensemble,residential area,7,a satellite photo of residential area. || a centered satellite image of residential area. || an aerial image of residential area. || a remote sensing image of residential area. || an overhead view of residential area. || a land cover image of residential area. || a Sentinel-2 style patch of residential area.
+ensemble,river,7,a satellite photo of river. || a centered satellite image of river. || an aerial image of river. || a remote sensing image of river. || an overhead view of river. || a land cover image of river. || a Sentinel-2 style patch of river.
+ensemble,sea or lake,7,a satellite photo of sea or lake. || a centered satellite image of sea or lake. || an aerial image of sea or lake. || a remote sensing image of sea or lake. || an overhead view of sea or lake. || a land cover image of sea or lake. || a Sentinel-2 style patch of sea or lake.

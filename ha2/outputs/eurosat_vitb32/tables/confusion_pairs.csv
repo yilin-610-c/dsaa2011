@@ -1,0 +1,127 @@
+true_label,pred_label,count,prompt
+annual crop land,permanent crop land,446,simple
+pasture land,permanent crop land,378,simple
+herbaceous vegetation,permanent crop land,350,simple
+river,permanent crop land,208,simple
+industrial area,residential area,197,simple
+forest,highway or road,177,simple
+forest,sea or lake,167,simple
+highway or road,permanent crop land,158,simple
+annual crop land,highway or road,105,simple
+herbaceous vegetation,sea or lake,100,simple
+forest,permanent crop land,100,simple
+sea or lake,river,91,simple
+forest,river,80,simple
+river,highway or road,80,simple
+river,sea or lake,65,simple
+herbaceous vegetation,highway or road,62,simple
+industrial area,permanent crop land,54,simple
+residential area,permanent crop land,49,simple
+herbaceous vegetation,forest,37,simple
+herbaceous vegetation,river,36,simple
+residential area,industrial area,30,simple
+river,industrial area,27,simple
+residential area,annual crop land,26,simple
+permanent crop land,highway or road,20,simple
+highway or road,industrial area,15,simple
+permanent crop land,annual crop land,15,simple
+highway or road,residential area,14,simple
+permanent crop land,industrial area,12,simple
+river,annual crop land,11,simple
+herbaceous vegetation,annual crop land,11,simple
+annual crop land,forest,11,simple
+sea or lake,highway or road,11,simple
+permanent crop land,residential area,11,simple
+industrial area,annual crop land,9,simple
+river,residential area,8,simple
+residential area,highway or road,8,simple
+annual crop land,herbaceous vegetation,7,simple
+annual crop land,sea or lake,7,simple
+pasture land,sea or lake,7,simple
+permanent crop land,forest,6,simple
+pasture land,river,6,simple
+annual crop land,industrial area,5,simple
+annual crop land,residential area,4,simple
+annual crop land,river,4,simple
+highway or road,annual crop land,4,simple
+pasture land,annual crop land,4,simple
+permanent crop land,river,4,simple
+sea or lake,permanent crop land,4,simple
+sea or lake,forest,4,simple
+pasture land,highway or road,4,simple
+industrial area,highway or road,2,simple
+herbaceous vegetation,residential area,2,simple
+forest,herbaceous vegetation,2,simple
+forest,pasture land,2,simple
+highway or road,herbaceous vegetation,2,simple
+highway or road,river,2,simple
+river,forest,2,simple
+industrial area,forest,1,simple
+forest,annual crop land,1,simple
+permanent crop land,herbaceous vegetation,1,simple
+pasture land,industrial area,1,simple
+residential area,forest,1,simple
+sea or lake,herbaceous vegetation,1,simple
+herbaceous vegetation,forest,373,ensemble
+permanent crop land,annual crop land,285,ensemble
+pasture land,annual crop land,267,ensemble
+industrial area,residential area,200,ensemble
+forest,sea or lake,178,ensemble
+herbaceous vegetation,highway or road,84,ensemble
+river,highway or road,84,ensemble
+river,sea or lake,79,ensemble
+herbaceous vegetation,sea or lake,77,ensemble
+annual crop land,forest,75,ensemble
+river,annual crop land,73,ensemble
+highway or road,annual crop land,73,ensemble
+forest,highway or road,71,ensemble
+annual crop land,highway or road,67,ensemble
+permanent crop land,industrial area,58,ensemble
+permanent crop land,highway or road,53,ensemble
+highway or road,industrial area,49,ensemble
+river,industrial area,48,ensemble
+herbaceous vegetation,river,48,ensemble
+permanent crop land,residential area,46,ensemble
+permanent crop land,forest,41,ensemble
+pasture land,forest,39,ensemble
+sea or lake,forest,27,ensemble
+residential area,industrial area,20,ensemble
+annual crop land,industrial area,18,ensemble
+sea or lake,river,18,ensemble
+highway or road,residential area,18,ensemble
+annual crop land,residential area,17,ensemble
+river,forest,16,ensemble
+pasture land,sea or lake,15,ensemble
+highway or road,forest,12,ensemble
+permanent crop land,river,12,ensemble
+river,residential area,10,ensemble
+pasture land,permanent crop land,9,ensemble
+residential area,annual crop land,8,ensemble
+pasture land,river,8,ensemble
+annual crop land,sea or lake,8,ensemble
+industrial area,annual crop land,8,ensemble
+herbaceous vegetation,pasture land,8,ensemble
+pasture land,industrial area,7,ensemble
+annual crop land,permanent crop land,6,ensemble
+pasture land,highway or road,6,ensemble
+sea or lake,highway or road,6,ensemble
+residential area,forest,5,ensemble
+highway or road,river,4,ensemble
+herbaceous vegetation,annual crop land,4,ensemble
+forest,annual crop land,4,ensemble
+forest,pasture land,4,ensemble
+residential area,highway or road,3,ensemble
+herbaceous vegetation,residential area,3,ensemble
+herbaceous vegetation,industrial area,3,ensemble
+forest,river,2,ensemble
+forest,industrial area,2,ensemble
+highway or road,sea or lake,2,ensemble
+industrial area,forest,2,ensemble
+river,pasture land,2,ensemble
+river,permanent crop land,2,ensemble
+highway or road,permanent crop land,1,ensemble
+annual crop land,river,1,ensemble
+permanent crop land,sea or lake,1,ensemble
+pasture land,residential area,1,ensemble
+sea or lake,annual crop land,1,ensemble
+sea or lake,residential area,1,ensemble

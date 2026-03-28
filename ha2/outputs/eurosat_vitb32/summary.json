@@ -1,0 +1,40 @@
+{
+  "dataset": "EuroSAT",
+  "backend": "clip",
+  "model_name": "ViT-B/32",
+  "pretrained_name": "openai",
+  "seed": 2026,
+  "test_fraction": 0.2,
+  "num_test_samples": 5400,
+  "simple_accuracy": 0.3946296296296296,
+  "ensemble_accuracy": 0.505,
+  "accuracy_delta": 0.1103703703703704,
+  "simple_bootstrap": {
+    "mean": 0.39438222222222225,
+    "std": 0.006590005395038364,
+    "ci_low": 0.3811111111111111,
+    "ci_high": 0.40703703703703703
+  },
+  "ensemble_bootstrap": {
+    "mean": 0.5049992592592593,
+    "std": 0.006936660039693352,
+    "ci_low": 0.49166666666666664,
+    "ci_high": 0.5188888888888888
+  },
+  "improved_count": 1068,
+  "regressed_count": 472,
+  "unchanged_correct_count": 1659,
+  "unchanged_wrong_count": 2201,
+  "most_improved_classes": [
+    "annual crop land",
+    "forest",
+    "river"
+  ],
+  "most_degraded_classes": [
+    "highway or road",
+    "herbaceous vegetation",
+    "permanent crop land"
+  ],
+  "output_dir": "outputs/eurosat_vitb32",
+  "classifier_embedding_mean_abs_delta": 0.015380859375
+}
