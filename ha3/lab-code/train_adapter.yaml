@@ -1,0 +1,28 @@
+output_dir: ./checkpoints/color-adapter
+data_dir: ./data
+pretrained_model_name_or_path: /home/jiawen/pretrained/stabilityai/stable-diffusion-v1-5
+cache_dir: .cache
+resolution: 512
+
+per_device_train_batch_size: 16
+per_device_eval_batch_size: 8
+dataloader_num_workers: 0
+gradient_accumulation_steps: 1
+num_train_epochs: 5
+learning_rate: 1.0e-4
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 1.0e-4
+lr_scheduler: constant
+lr_warmup_steps: 0
+max_grad_norm: 1.0
+resume_from_checkpoint: checkpoints/color-adapter/checkpoint-500
+
+validation_steps: 500
+checkpointing_steps: 500
+save_total_limit: 1
+
+report_to: swanlab
+seed: 42
+val_ratio: 0.005
+max_train_samples: null

@@ -1,0 +1,6 @@
+{
+  "alpha_bar_T": 4.035829260828905e-05,
+  "max_train_steps": 10000,
+  "schedule": "scaled_linear",
+  "training_T": 1000
+}

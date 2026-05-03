@@ -1,0 +1,14 @@
+{
+  "args": {
+    "batch_size": 128,
+    "data_dir": "./data",
+    "device": "auto",
+    "epochs": 5,
+    "lr": 0.001,
+    "min_accuracy": 0.98,
+    "num_workers": 2,
+    "out": "./results/evaluator/mnist_classifier.pt",
+    "seed": 42
+  },
+  "test_accuracy": 0.9913
+}
