@@ -1,0 +1,6 @@
+Far-from-origin analysis
+x_T = scale * z, z ~ N(0,I); scales = [1, 2, 4, 8]
+The same base noise z is reused across scales for the comparison grid.
+Large scales move x_T outside the typical region of the standard Gaussian prior.
+Selected checkpoint: cosine_T1000
+Sampler: DDIM
