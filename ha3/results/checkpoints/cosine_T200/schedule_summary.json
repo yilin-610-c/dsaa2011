@@ -1,0 +1,6 @@
+{
+  "alpha_bar_T": 6.071638125604295e-08,
+  "max_train_steps": 10000,
+  "schedule": "cosine",
+  "training_T": 200
+}
